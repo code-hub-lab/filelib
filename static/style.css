@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.navbar-brand{
+	font-family: 'Fredoka One', cursive;
+ font-size: 30px!important;
+ text-shadow: 3px 3px 4px grey;
+ letter-spacing: 3px;
+}
+.custom-row{
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	margin: auto;
+}
+.custom-col{
+	/*width: fit-content;*/
+	height: fit-content;
+	border: 2px solid grey;
+}
+
+@media only screen and (max-width:1080px){
+	.custom-row{
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+@media only screen and (max-width:900px){
+	.custom-row{
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
+@media only screen and (max-width:720px){
+	.custom-row{
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+@media only screen and (max-width:540px ){
+	.custom-row{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media only screen and (max-width: 380px){
+	.custom-row{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media only screen and (max-width: 300px){
+	.custom-row{
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

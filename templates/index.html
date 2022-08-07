@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+Home - FILE LIB
+{% endblock %}
+{% block body %}
+<div class="container-lg my-5 py-sm-5">
+	<h1 class="text-capitalize display-4 font-weight-bolder {% if session.get('sdjfoi8235235j23592y3k2qdpaaamf') %} text-success{% endif %}"><b>Files</b></h1>
+	<div class="custom-row">
+		{% for x in files %}
+		<div class="custom-col m-1 shadow p-1 py-3  rounded text-center">
+			<span class="card-title d-block my-2 text-capitalize text-primary">{{x[2]}}</span>
+			<a href="static/media/files/{{x[1]}}" download="{{x[1]}}" class="btn btn-outline-dark btn-sm">Download</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

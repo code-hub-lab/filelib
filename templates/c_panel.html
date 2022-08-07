@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+C-Panel
+{% endblock %}
+{% block body %}
+{% if request.url == (request.root_url+"login") %}
+<div class="container my-5 p-2 text-center">
+	<b class="text-danger">{{loging_failed}}</b>
+	<h2 class="text-capitalize text-info">C-Panel</h2>
+	<form action="/login" method="post" class="mx-auto" style="max-width:300px">
+		<input type="text" class="form-control my-1" required minlength="5" placeholder="username" name="username">
+		<input type="password" class="form-control my-1" required placeholder="password"  name="password">
+		<input type="submit" value="Log in" class="btn btn-outline-dark mt-2" >
+	</form>
+</div>
+{% endif %}
+{% endblock %}

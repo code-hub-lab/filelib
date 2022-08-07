@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Home - FILE LIB
+{% endblock %}
+{% block body %}
+<div class="container-lg my-5">
+	<!-- upload files -->
+	{{upload_error}}
+	<div class="mt-5 text-center">
+		<br>
+			<b class="text-danger text-center mx-auto py-5">{{file_error}}</b>
+		<form action="/upload-files" method="post" class="mx-auto " style="max-width:300px" enctype="multipart/form-data">
+		<input  type="hidden" id="size" name="size">
+		<input  type="hidden" id="type" name="type">
+		<input id="file" title="Select File" type="file" class="form-control my-1" required minlength="5" placeholder="username" name="file">
+		<input type="text" class="form-control my-1" required placeholder="file title" title="File Title"  name="title">
+		<button title="Upload" class="btn btn-outline-success d-block mx-auto mt-2" type="submit">Upload <i class="bi bi-cloud-arrow-up ml-2"></i></button>
+	</form>
+	</div>
+	<!-- control files -->
+	<h1 class="text-capitalize display-4 font-weight-bolder {% if session.get('sdjfoi8235235j23592y3k2qdpaaamf') %} text-success {% endif %}"><b>Files</b></h1>
+	<div class="custom-row">
+		{% for x in files %}
+		<div class="custom-col m-1 shadow p-1 py-3  rounded text-center"> 
+				<a title="Delete File" href="/delete/{{x[1]}}"  class=" d-block  bi text-left bi-x-circle-fill text-danger" style="font-size: 1.4rem;"></a>
+			<span class="card-title d-block my-2 text-capitalize text-primary">{{x[2]}}</span>
+			<a title="Download File" href="static/media/files/{{x[1]}}" download="{{x[1]}}" class="btn btn-outline-dark btn-sm">Download</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
